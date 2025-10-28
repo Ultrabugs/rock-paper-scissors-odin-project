@@ -1,0 +1,17 @@
+*{
+    box-sizing: border-box;
+}
+
+html {
+    background-color: #010409;
+}
+
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container h1{
+    color: whitesmoke;
+}
