@@ -31,7 +31,7 @@ button {
     padding: 15px;
     margin: 5px;
     color: whitesmoke;
-    font-size: 14px;
+    font-size: 24px;
     font-weight: bolder;
     border: 1px solid snow;
     border-radius: 6px;
@@ -39,4 +39,39 @@ button {
 
 button:hover {
     background-color:  rgb(143, 7, 221);
+}
+
+.results {
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+
+.pResults {
+    color: whitesmoke;
+    font-size: 26px;
+    font-weight: bolder;
+    border: 2px solid darkgoldenrod;
+    padding: 15px;
+}
+
+.score-container {
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.scoretotal {
+    color: whitesmoke;
+    padding: 0px;
+    margin: 0px;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.winner {
+    color: green; 
+    font-size: 22px; 
+    font-weight: bolder;
 }

@@ -10,16 +10,32 @@ function playGame() {
 
    
 
+    const results = document.querySelector(".results");
+    const resultsParagraph = document.createElement("p");
     
+    const hmnScore = document.querySelector(".humanscore");
+    const cmpScore = document.querySelector(".computerscore");
+
+    const winner = document.querySelector(".winner");
+
     const buttons = document.querySelectorAll("button");
     buttons.forEach((button) => {
         button.addEventListener('click', (e) => {
             let computerSelection = getComputerChoice();
-            console.log(button.id);
+            
             playRound(button.id, computerSelection);
             
+            hmnScore.textContent = `human score: ${humanScore}`;
+            cmpScore.textContent = `computer score: ${computerScore}`;
             console.log(`humanscore = ${humanScore}`);
             console.log(`computerscore = ${computerScore}`);
+            if(humanScore >= 5 || computerScore >= 5) {
+                if(humanScore > computerScore){
+                    winner.textContent = `human wins the game!!!`;
+                } else {
+                    winner.textContent = `computer wins the game!!!`;
+                }
+            }
             
             
                     
@@ -33,23 +49,41 @@ function playGame() {
             return;
         
         } else if (humanSelection === 'rock' && computerChoice === 'paper') {
-            console.log('Computer wins');
+            resultsParagraph.textContent = "Computer wins 😠";
+            resultsParagraph.classList.add("pResults");
+            results.appendChild(resultsParagraph);
             return computerScore++
+
         } else if (humanSelection === 'paper' && computerChoice === 'rock') {
-            console.log('Human wins');
-             humanScore++
+            resultsParagraph.textContent = "Human wins 😁";
+            resultsParagraph.classList.add("pResults");
+            results.appendChild(resultsParagraph);
+            return humanScore++
+
         } else if (humanSelection === 'rock' && computerChoice === 'scissors') {
-            console.log('Human wins');
+            resultsParagraph.textContent = "Human wins 😁";
+            resultsParagraph.classList.add("pResults");
+            results.appendChild(resultsParagraph);
             return humanScore++
+
         } else if (humanSelection === 'scissors' && computerChoice === 'rock') {
-            console.log('Computer wins');
+            resultsParagraph.textContent = "Computer wins 😠";
+            resultsParagraph.classList.add("pResults");
+            results.appendChild(resultsParagraph);
             return computerScore++
+
         } else if (humanSelection === 'scissors' && computerChoice === 'paper') {
-            console.log('Human wins');
+            resultsParagraph.textContent = "Human wins 😁";
+            resultsParagraph.classList.add("pResults");
+            results.appendChild(resultsParagraph);
             return humanScore++
+
         } else if (humanSelection === 'paper' && computerChoice === 'scissors') {
-            console.log('Computer wins');
+            resultsParagraph.textContent = "Computer wins 😠";
+            resultsParagraph.classList.add("pResults");
+            results.appendChild(resultsParagraph);
             return computerScore++
+
         }
     }
      
