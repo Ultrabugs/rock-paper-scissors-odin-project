@@ -8,14 +8,21 @@ function playGame() {
     let humanScore = 0;
     let computerScore = 0;
 
-    const computerSelection = getComputerChoice();
+   
 
+    
     const buttons = document.querySelectorAll("button");
     buttons.forEach((button) => {
         button.addEventListener('click', (e) => {
+            let computerSelection = getComputerChoice();
             console.log(button.id);
             playRound(button.id, computerSelection);
-             
+            
+            console.log(`humanscore = ${humanScore}`);
+            console.log(`computerscore = ${computerScore}`);
+            
+            
+                    
         });
     });
 
@@ -30,7 +37,7 @@ function playGame() {
             return computerScore++
         } else if (humanSelection === 'paper' && computerChoice === 'rock') {
             console.log('Human wins');
-            return humanScore++
+             humanScore++
         } else if (humanSelection === 'rock' && computerChoice === 'scissors') {
             console.log('Human wins');
             return humanScore++
@@ -44,17 +51,7 @@ function playGame() {
             console.log('Computer wins');
             return computerScore++
         }
-
-        console.log(`Humans score, ${humanScore}`);
-        console.log(`Computers score ${computerScore}`);
     }
-     
-
-    
-    if(humanScore > 0 || computerScore > 0) {
-        return (humanScore > computerScore) ? console.log('Human won the entire game!') : console.log('Computer won the entire game!')
-    }
-    
      
 }
 
